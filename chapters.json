@@ -1,20 +1,22 @@
 {
-  "version": 2,
+  "version": 3,
   "order": [
     "01-uvod",
     "02-zaklady-ai",
     "03-bezpecnost",
-    "04-copilot-chat-minimum",
-    "05-copilot-realitni-agent",
-    "06-copilot-administrativa",
-    "07-m365-lepsi-svet",
-    "08-bezpecnost-prakticky",
-    "09-hands-on",
-    "10-nejcastejsi-chyby",
-    "11-jak-zacit-zitra",
+    "04-copilot-chat",
+    "05-jak-zadavet-5k",
+    "06-rychly-start-12",
+    "07-cviceni-kancelar",
+    "08-cviceni-realitni",
+    "09-cviceni-admin",
+    "10-agenti",
+    "11-m365",
     "12-osobni-inspirace",
-    "13-plan-7-dni",
-    "14-knihovna-promptu"
+    "13-nejcastejsi-chyby",
+    "14-ai-kufrik",
+    "15-plan-7-dni",
+    "16-knihovna-promptu"
   ],
   "chapters": [
     {
@@ -22,126 +24,424 @@
       "number": "1",
       "section": "Start",
       "title": "Jak s materiálem pracovat",
-      "description": "Jak kopírovat prompty, iterovat, poznat hotovo.",
-      "plain": "prompty iterace hotovo workflow",
-      "html": "<h1>Jak s tímto materiálem pracovat</h1><p class='kicker'>Pracovní sešit: otevři kapitolu, zkopíruj prompt, doplň [ ] a použij v Copilot Chatu.</p><div class='callout'><strong>Cíl:</strong> odejít s 5–10 vlastními prompty + 1–2 rutiny, které šetří čas každý den.</div><h2>3 pravidla úspěchu</h2><ul><li>Copilot = první verze. Ty = finální rozhodnutí a kontrola faktů.</li><li>Zadání piš jako kolegovi: role, cílovka, kontext, kritéria, kontrola.</li><li>Začni malým use casem (e-mail, shrnutí) a rozšiřuj postupně.</li></ul><h2>Jak poznáš, že je výstup použitelný</h2><ul><li>Sedí tón pro konkrétního člověka (klient vs kolega vs management).</li><li>Je jasný další krok (call-to-action).</li><li>Neobsahuje citlivé údaje navíc.</li><li>Obsahuje checklist: co ověřit před odesláním.</li></ul>"
+      "description": "Pracovní sešit: kopírovat, doplňovat, iterovat.",
+      "plain": "pracovní sešit prompty iterace hotovo workflow",
+      "html": "<h1>Jak s tímto materiálem pracovat</h1><p class='kicker'>Cvičební materiál pro účastníky workshopu Microsoft Copilot v C&W ČR (Praha). Verze: online (kopíruj–vkládej). Primární nástroj: Copilot Chat (firemní účet).</p><div class='callout'><strong>Cíl workshopu:</strong> 5–10 konkrétních promptů pro vaši práci, 1–2 rychlé rutiny (AI workflow), méně obav a víc jistoty.</div><h2>3 pravidla práce s materiálem</h2><ul><li>Nečtěte to celé najednou. Vezměte si vždy jen kapitolu, kterou zrovna řešíte.</li><li>Prompty jsou připravené k použití. Doplňujte jen části v hranatých závorkách [ ].</li><li>Každé cvičení má „hotovo, když…“ (kritéria). To je důležitější než dokonalý výsledek.</li></ul><h2>Jak poznáte, že je výstup použitelný</h2><ul><li>Sedí tón pro konkrétního člověka (klient vs kolega vs management).</li><li>Je jasný další krok (call-to-action).</li><li>Neobsahuje citlivé údaje navíc.</li><li>Obsahuje checklist: co ověřit před odesláním.</li></ul>"
     },
     {
       "slug": "02-zaklady-ai",
       "number": "2",
       "section": "Základy",
-      "title": "Základní principy a definice",
-      "description": "Generativní AI, prompt, kontext, iterace, halucinace.",
-      "plain": "generativní ai prompt kontext iterace halucinace deterministické stochastické",
-      "html": "<h1>Základní principy a definice</h1><p class='kicker'>Bez technických detailů navíc – jen to, co zlepší výsledek zítra v práci.</p><h2>Co Copilot doopravdy dělá</h2><p>Copilot je <strong>stroj na návrhy</strong>. Z toho, co mu dáš, vyrobí pravděpodobně užitečný draft: text, strukturu, varianty.</p><div class='callout'><strong>Analogie:</strong> Excel počítá. Copilot navrhuje. Excel = přesnost, Copilot = rychlý draft + jazyk + struktura.</div><h2>Slovníček</h2><ul><li><strong>Prompt</strong> = zadání (co chceš, v jakém kontextu, v jaké podobě).</li><li><strong>Kontext</strong> = podklady (text, body, parametry) a omezení.</li><li><strong>Iterace</strong> = druhé/třetí kolo: zkrátit, zpřesnit, změnit tón.</li><li><strong>Halucinace</strong> = sebevědomě znějící nesmysl / vymyšlený fakt.</li><li><strong>AI kufřík</strong> = tvoje sada ověřených promptů pro opakované úkoly.</li></ul><h2>Halucinace: jednoduchá obrana</h2><ul><li>U faktů vždy ověřuj (částky, termíny, podmínky, zdroje).</li><li>Přikaž: „Nic si nevymýšlej. Kde si nejsi jistý, napiš co ověřit.“</li><li>Odděl: forma (AI) vs fakta (ty).</li></ul><h2>Copilot není Google</h2><p>Na rešerše používej Copilot hlavně jako <strong>strukturovač</strong>: osnova, otázky, shrnutí zdrojů, které už máš. Fakta ověřuj.</p>"
+      "title": "Základní principy generativní AI",
+      "description": "Jak Copilot funguje v praxi a proč občas ujede.",
+      "plain": "generativní ai stochastické deterministické halucinace analogie excel",
+      "html": "<h1>Základní principy generativní AI</h1><p class='kicker'>Stručně, prakticky, bez technických detailů navíc.</p><h2>Copilot je stroj na návrhy</h2><p>Dostane zadání + kontext, navrhne nejpravděpodobnější pokračování (text, strukturu, varianty). Umí být velmi užitečný, když mu řeknete, co je dobrý výsledek.</p><div class='callout'><strong>Dobrá analogie:</strong> Excel přesně spočítá, Copilot navrhuje – ale občas se splete jako člověk.</div><h2>Stochastické vs. deterministické úlohy</h2><ul><li><strong>Deterministické:</strong> 2+2=4, součet sloupce v Excelu.</li><li><strong>Stochastické:</strong> e-mail klientovi, argumenty do vyjednávání, shrnutí.</li></ul><p>Copilot je silný v druhém typu úloh.</p><h2>Copilot není Google</h2><ul><li>Hodí se pro: přepis textu, první verze, varianty, strukturování chaosu.</li><li>Nehodí se pro: přesná čísla bez ověření, právní/faktické závěry bez kontroly.</li></ul><h2>Halucinace: co to je a jak s tím žít</h2><p>AI někdy sebevědomě řekne nepravdu, protože to zní pravděpodobně.</p><div class='callout'><strong>Antihalucinační věta:</strong> „Nic si nevymýšlej. Když si nejsi jistý, napiš, co je potřeba ověřit.“</div><h2>Slovníček</h2><ul><li><strong>Prompt</strong> = zadání (co chcete, v jakém kontextu, v jaké podobě).</li><li><strong>Kontext</strong> = informace, ze kterých má Copilot vycházet.</li><li><strong>Iterace</strong> = druhé a třetí kolo úprav (zkrátit, zpřesnit, jiný tón).</li><li><strong>Agent</strong> = přednastavený minipomocník pro konkrétní úkol.</li><li><strong>AI kufřík</strong> = vaše sada ověřených promptů.</li></ul>"
     },
     {
       "slug": "03-bezpecnost",
       "number": "3",
       "section": "Základy",
-      "title": "Bezpečnost a firemní kontext",
-      "description": "Co je bezpečné, co nedělat, jak anonymizovat.",
+      "title": "Bezpečné používání v C&W",
+      "description": "Jednoduchá pravidla, anonymizace, co nedávat.",
       "plain": "bezpečnost firemní účet anonymizace citlivé údaje smlouvy",
-      "html": "<h1>Bezpečnost a firemní kontext</h1><p class='kicker'>Praktická pravidla pro bezpečné používání v C&W.</p><h2>Základní pravidlo</h2><p>Na práci používej Copilot přes <strong>firemní účet</strong>. Dávej jen minimálně nutné informace pro úkol.</p><h2>Co typicky ano</h2><ul><li>Drafty e-mailů, přepisy bodů do textu, kontrola stylistiky.</li><li>Anonymizované příklady (Klient A, Pronajímatel B).</li><li>Shrnutí interních poznámek – pokud je to v souladu s interními pravidly.</li></ul><h2>Co typicky ne (nebo po anonymizaci)</h2><ul><li>Hesla, přístupy, interní bezpečnostní informace.</li><li>Osobní údaje třetích stran a citlivé personální věci.</li><li>Plné smlouvy a citlivé podmínky bez jistoty, že je to OK.</li></ul><h2>Anonymizace za 15 sekund</h2><ul><li>Jména → Klient A / Firma X</li><li>Adresy → Lokace 1</li><li>Částky → rozmezí / přibližně</li><li>Interní názvy → obecnější termín</li></ul><div class='callout'><strong>Bezpečný default:</strong> Copilot je asistent na formu (tón, struktura). Citlivá fakta držíš pod kontrolou ty.</div>"
+      "html": "<h1>Bezpečné používání v C&amp;W</h1><p class='kicker'>Nejdůležitější věc: vždy pracujte přes firemní účet.</p><h2>Základní pravidlo</h2><p>Na práci používejte Copilot pod firemním účtem. Chrání to data firmy, kolegů i klientů.</p><h2>Co do Copilotu patří</h2><ul><li>Obecné texty bez citlivých údajů.</li><li>Anonymizované příklady („Klient A“, „Pronajímatel B“).</li><li>Interní texty, které běžně sdílíte v rámci firmy.</li><li>Koncepty e-mailů a kontrola stylistiky.</li></ul><h2>Co do Copilotu nedávat (nebo jen po anonymizaci)</h2><ul><li>Osobní údaje třetích stran.</li><li>Smlouvy a citlivé podmínky bez jistoty souladu s pravidly.</li><li>Hesla, přístupy, interní bezpečnostní informace.</li></ul><h2>Nejjednodušší anonymizace</h2><ul><li>Jména → Klient A / Firma X</li><li>Adresy → Lokace 1</li><li>Částky → Budget ~X (nebo rozsah)</li><li>Interní názvy → obecněji</li></ul><div class='callout'><strong>Bezpečný default:</strong> Copilot je asistent na formu (tón, struktura). Citlivá fakta držíte pod kontrolou vy.</div>"
     },
     {
-      "slug": "04-copilot-chat-minimum",
+      "slug": "04-copilot-chat",
       "number": "4",
       "section": "Copilot Chat",
-      "title": "Copilot Chat – každodenní minimum",
-      "description": "Core scénáře a prompty pro každý den.",
-      "plain": "copilot chat shrnutí emaily překlady brainstorming rešerše prompty",
-      "html": "<h1>Copilot Chat – každodenní minimum</h1><p class='kicker'>Nejrychlejší návratnost: e-maily, shrnutí, přepis bodů, kontrola textů.</p><h2>Co je důležité vědět</h2><ul><li>Copilot Chat je hlavně chat: podklady mu typicky musíš dodat (vložit).</li><li>Nečekej zázrak „vyplivne hotový PowerPoint“ – místo toho chtěj osnovu, texty, checklist.</li><li>U faktů počítej s kontrolou – u formy můžeš AI věřit víc.</li></ul><h2>4 scénáře, které se vyplatí hned</h2><ul><li>Shrnutí vlákna + návrh odpovědi</li><li>Z bodů udělat klientský e-mail</li><li>Kontrola textu (opravy + zkrácení)</li><li>Příprava na schůzku (agenda + otázky)</li></ul><h2>Starter prompty</h2><pre><code>Níže je e-mailové vlákno.\n1) Shrň ho do 6 bodů (co se řeší, co už je dohodnuto).\n2) Vypiš otevřené otázky a rizika (max 6).\n3) Navrhni odpověď klientovi: profesionální, stručná, přátelská. Max 120 slov.\n4) Na konec přidej checklist: co ověřit před odesláním.\n\nText:\n[VLOŽTE]</code></pre><pre><code>Z těchto bodů udělej e-mail klientovi.\n- cílovka: [CFO / HR / CEO / office manager]\n- účel: [potvrdit prohlídku / poslat shortlist / vysvětlit další krok]\n- tón: profesionální, lidský, bez vaty\n- délka: max 140 slov\n- jazyk: česky\n- na konci jasný další krok\n\nBody:\n[1]\n[2]\n[3]</code></pre><pre><code>Zkontroluj tento text.\nChci:\n1) opravit chyby a zlepšit srozumitelnost\n2) zkrátit o 20 % bez ztráty významu\n3) zachovat profesionální tón\n4) vypsat 5 míst, kde to může být nejasné + navrhnout opravu\n\nText:\n[VLOŽTE]</code></pre><pre><code>Jsi můj sparring partner. Připravuji se na schůzku ohledně [deal / shortlist / renegociace].\nMůj cíl: [cíl]\n\nVytvoř:\n1) Agendu na 30 minut\n2) Must-have vs nice-to-have\n3) 3 scénáře vývoje + nejlepší reakce\n4) 10 otázek, které musím položit\n5) Checklist: co ověřit před schůzkou\n\nKontext:\n[VLOŽTE]</code></pre>"
+      "title": "Copilot Chat u vás: co umí / co nečekat",
+      "description": "Realistická očekávání a jak to typicky vypadá.",
+      "plain": "copilot chat očekávání základní licence work web researcher analyst",
+      "html": "<h1>Copilot Chat u vás: co umí / co nečekat</h1><p class='kicker'>Aby nevznikla zbytečná frustrace.</p><h2>Jak to typicky vypadá</h2><p>Většina lidí má Copilot Chat (základní licenci). Menší část má Microsoft 365 Copilot.</p><h2>Co u základního Copilot Chatu často nebývá</h2><ul><li>Researcher / Analyst</li><li>přepínač Work/Web</li><li>voice chat</li><li>Notebooks</li><li>draftování e-mailu přímo v okně nového mailu</li></ul><p><strong>Prakticky:</strong> budete častěji kopírovat podklady do chatu a výstup vkládat zpět.</p><h2>Co naopak jde a stojí za pozornost</h2><ul><li>Agenty, které vám někdo nasdílí.</li><li>Často i tvorba jednoduchých agentů (záleží na nastavení).</li></ul>"
     },
     {
-      "slug": "05-copilot-realitni-agent",
+      "slug": "05-jak-zadavet-5k",
       "number": "5",
-      "section": "Role",
-      "title": "Copilot v roli realitního agenta",
-      "description": "Popisy, shortlist, porovnání, námitky, příprava na jednání.",
-      "plain": "realitní agent popis nemovitosti shortlist porovnání námitky vyjednávání",
-      "html": "<h1>Copilot v roli realitního agenta</h1><p class='kicker'>Cíl: rychlejší příprava a lepší výstupy pro klienta, bez generických frází.</p><h2>1) Popisy nemovitostí (3 režimy)</h2><ul><li>Web popis (marketingový, ale věcný)</li><li>E-mail klientovi (relevance pro potřebu klienta)</li><li>Teaser do interního shortlistu (odrážky)</li></ul><pre><code>Jsi copywriter pro komerční nemovitosti.\nNíže jsou fakta o nemovitosti. Nic si nevymýšlej.\nVytvoř 3 výstupy:\nA) Web popis (120–160 slov), marketingový, ale věcný.\nB) Krátký e-mail klientovi (max 90 slov) – proč je to relevantní pro firmu, která hledá [X].\nC) Teaser do interního shortlistu (6 odrážek).\nNa závěr napiš „Co je potřeba doplnit, aby to bylo kompletní“.\n\nPodklady:\n[VLOŽTE]</code></pre><h2>2) Shortlist a doporučení</h2><pre><code>Jsi seniorní realitní konzultant.\nNapiš e-mail klientovi, který posílá shortlist 3 možností.\nTón: profesionální, stručný, bez hype.\nMax 140 slov.\nNa závěr navrhni další krok (call / prohlídky).\nKontext a 3 možnosti:\n[VLOŽTE]</code></pre><h2>3) Porovnání nabídek</h2><pre><code>Níže jsou parametry několika nabídek.\nÚkol:\n1) Udělej srovnání v tabulce (parametry + rizika).\n2) Napiš „kdy dává smysl vybrat každou variantu“.\n3) Připrav 10 otázek na landlord/PM pro férové porovnání.\n4) Na závěr: doporučení + na čem závisí.\n\nData:\n[VLOŽTE]</code></pre><h2>4) Námitky klientů</h2><pre><code>Jsi obchodní kouč pro komerční real estate.\nKlient říká: \"[VLOŽ NÁMITKU]\"\n\nPřiprav 3 varianty odpovědi:\n1) krátká a věcná (1–2 věty)\n2) vysvětlující (5–6 vět)\n3) strategická – s otázkou zpět\n\nZohledni:\n- cíl: udržet důvěru, ne tlačit\n- neslibuj nic, co není ověřené</code></pre><div class='callout'><strong>Tip:</strong> Nech Copilota napsat i „otázku zpět“. To často posune jednání dál bez tlaku.</div>"
+      "section": "Promptování",
+      "title": "Jak zadávat: 5K + triky",
+      "description": "Největší páka pro lepší výstupy.",
+      "plain": "5k role cílovka kontext kritéria kontrola triky",
+      "html": "<h1>Jak zadávat: 5K (a pár dalších triků)</h1><p class='kicker'>Největší páka pro lepší výsledky.</p><h2>Rámec 5K</h2><ul><li><strong>Kdo</strong> má Copilot být (role)</li><li><strong>Komu</strong> to je (cílovka)</li><li><strong>Kontext</strong> (co se děje, co už víme)</li><li><strong>Kritéria</strong> (tón, délka, jazyk, forma)</li><li><strong>Kontrola</strong> (ať se zeptá / ať dá checklist / ať označí nejistoty)</li></ul><h3>Mikro-šablona (kopírovat)</h3><pre><code>Jsi [role].
+Cílovka: [komu to je].
+Kontext: [stručně].
+Úkol: [co přesně máš udělat].
+Kritéria: [tón, délka, formát, jazyk].
+Kontrola: Nic si nevymýšlej. Pokud něco chybí, polož mi 3 doplňující otázky. Přidej checklist ověření.</code></pre><h2>Trik „nejdřív se ptej“</h2><pre><code>Než začneš tvořit výstup, polož mi 5 doplňujících otázek, které zásadně zlepší výsledek.</code></pre><h2>Trik „dvě role“ (tvůrce + kritik)</h2><pre><code>Nejdřív vytvoř návrh.
+Pak přepni do role přísného editora a:
+- vypiš 7 slabých míst
+- navrhni konkrétní úpravy
+- zkrať to o 20 % bez ztráty významu</code></pre><h2>Meta-prompt (když nevíte, jak to zadat)</h2><pre><code>Napiš mi nejlepší prompt pro Copilot Chat na tento úkol: [popis].
+Zeptej se mě na 5 upřesnění.
+Až odpovím, prompt uprav a použij.</code></pre>"
     },
     {
-      "slug": "06-copilot-administrativa",
+      "slug": "06-rychly-start-12",
       "number": "6",
-      "section": "Role",
-      "title": "Copilot v administrativě",
-      "description": "Zápisy, interní komunikace, kontrola textů, standardizace.",
-      "plain": "administrativa zápis meeting interní komunikace kontrola textů standardizace",
-      "html": "<h1>Copilot v administrativě</h1><p class='kicker'>Cíl: méně času na rutinu, více konzistence a klidu.</p><h2>1) Interní komunikace</h2><pre><code>Jsi interní komunikátor.\nPotřebuji oznámení pro kolegy na téma: [téma].\n\nVytvoř:\n1) E-mail (max 160 slov), srozumitelný a přátelský.\n2) Krátké FAQ (6 otázek a odpovědí).\n3) 3 varianty předmětu.\n\nTón: profesionální, ne formální.\nJazyk: česky.\nPodklady:\n[VLOŽTE]</code></pre><h2>2) Zápisy z meetingů</h2><pre><code>Z mých poznámek vytvoř zápis z meetingu.\nStruktura:\n- Kontext (2 věty)\n- Klíčová rozhodnutí\n- Action items (tabulka: Úkol | Vlastník | Deadline | Poznámka)\n- Otevřené otázky\n- Rizika a závislosti\n- Návrh dalšího kroku\n\nPoznámky:\n[VLOŽTE]</code></pre><h2>3) Kontrola textů</h2><pre><code>Zkontroluj tento text.\nChci:\n1) opravit chyby a zlepšit srozumitelnost\n2) zkrátit o 20 % bez ztráty významu\n3) zachovat profesionální tón\n4) vypsat 5 míst, kde to může být nejasné + navrhnout opravu\n\nText:\n[VLOŽTE]</code></pre><h2>4) Standardizace dokumentů (terminologie + jednotky)</h2><pre><code>Zkontroluj konzistenci v textu.\nHledej:\n- nejednotné názvosloví\n- jednotky (m²/sqm, Kč/EUR, měsíčně/ročně)\n- duplicity a nejasnosti\n\nVýstup:\n1) seznam nálezů + doporučená oprava\n2) návrh slovníku (10 termínů: preferovaný tvar)\n\nText:\n[VLOŽTE]</code></pre>"
+      "section": "Rychlý start",
+      "title": "12 promptů, které se vyplatí hned",
+      "description": "Použijte jako základ svého AI kufříku.",
+      "plain": "rychlý start 12 promptů email shrnutí překlad",
+      "html": "<h1>Rychlý start: 12 promptů, které se vyplatí hned</h1><p class='kicker'>Použijte je jako základ svého AI kufříku.</p><h2>1) Shrnutí e-mailu + odpověď</h2><pre><code>Níže je e-mailové vlákno.
+1) Shrň ho do 6 bodů.
+2) Vypiš otevřené otázky a rizika (max 6).
+3) Navrhni odpověď (max 120 slov), tón profesionální a přátelský.
+4) Přidej checklist: co ověřit před odesláním.
+
+Text:
+[VLOŽTE]</code></pre><h2>2) Přepis bodů do klientského e-mailu</h2><pre><code>Z těchto bodů udělej e-mail klientovi.
+Cílovka: [CFO/HR/CEO/office manager]
+Tón: profesionální, bez vaty
+Délka: max 140 slov
+Na konci: jasný další krok
+
+Body:
+- ...</code></pre><h2>3) Dvojjazyčně (CZ + EN)</h2><pre><code>Vytvoř e-mail česky a anglicky se stejným významem.
+Angličtina: jednoduché věty, business tone.
+Přidej 2 varianty subjectu.
+
+Kontext:
+[VLOŽTE]</code></pre><h2>4) Zápis z meetingu (rozhodnutí + úkoly)</h2><pre><code>Z mých poznámek udělej zápis:
+- Kontext (2 věty)
+- Rozhodnutí
+- Action items (Úkol | Vlastník | Deadline | Poznámka)
+- Otevřené otázky
+- Další krok
+
+Poznámky:
+[VLOŽTE]</code></pre><h2>5) Kontrola textu (opravy + zkrácení)</h2><pre><code>Zkontroluj text:
+1) oprav chyby, zlepši srozumitelnost
+2) zkrať o 20 %
+3) zachovej profesionální tón
+4) vypiš 5 míst, kde je to nejasné + navrhni opravu
+
+Text:
+[VLOŽTE]</code></pre><h2>6) Popis nemovitosti ve 3 verzích</h2><pre><code>Níže jsou fakta o nemovitosti. Nic si nevymýšlej.
+Vytvoř:
+A) Web popis (120–160 slov)
+B) E-mail klientovi (max 90 slov)
+C) Teaser do interního shortlistu (6 odrážek)
+Na konci: co je potřeba doplnit.
+
+Podklady:
+[VLOŽTE]</code></pre><h2>7) Srovnání nabídek + otázky</h2><pre><code>Porovnej tyto nabídky:
+1) tabulka parametrů + rizika
+2) kdy dává smysl vybrat kterou variantu
+3) 10 otázek na landlord/provoz
+4) doporučení + na čem závisí
+
+Data:
+[VLOŽTE]</code></pre><h2>8) Námitky klienta (3 úrovně odpovědi)</h2><pre><code>Klient říká: "[VLOŽ NÁMITKU]"
+Připrav 3 odpovědi:
+1) krátká (1–2 věty)
+2) vysvětlující (5–6 vět)
+3) strategická (s otázkou zpět)
+Neslibuj nic, co není ověřené.</code></pre><h2>9) Příprava na schůzku (agenda + scénáře)</h2><pre><code>Připravuji se na schůzku: [téma].
+Cíl: [cíl].
+Vytvoř:
+- agendu 30 min
+- must-have vs nice-to-have
+- 3 scénáře vývoje + nejlepší reakce
+- 10 otázek, které musím položit</code></pre><h2>10) Interní oznámení + FAQ</h2><pre><code>Napiš interní e-mail kolegům: [téma].
+Max 160 slov, srozumitelně.
+Přidej FAQ (6 otázek a odpovědí) a 3 varianty předmětu.</code></pre><h2>11) „Udělej mi prompt“</h2><pre><code>Můj úkol: [popis].
+Napiš mi nejlepší prompt pro Copilot Chat + polož 5 doplňujících otázek.</code></pre><h2>12) „Z tohohle udělej 1 stránku pro management“</h2><pre><code>Z níže uvedeného obsahu udělej 1stránkové shrnutí pro management:
+- 5 hlavních bodů
+- 3 dopady
+- 3 doporučení
+- rizika a co ověřit
+
+Text:
+[VLOŽTE]</code></pre>"
     },
     {
-      "slug": "07-m365-lepsi-svet",
+      "slug": "07-cviceni-kancelar",
       "number": "7",
-      "section": "Bonus",
-      "title": "Lepší svět s Microsoft 365 Copilotem",
-      "description": "Word/Excel/PowerPoint/Outlook – realisticky, bez marketingu.",
-      "plain": "m365 copilot word excel powerpoint outlook upgrade researcher analyst",
-      "html": "<h1>Lepší svět s Microsoft 365 Copilotem</h1><p class='kicker'>Rozdíl: méně kopírování, víc práce přímo v aplikacích. Dává smysl pro některé role.</p><h2>Hlavní rozdíl</h2><p><strong>Copilot Chat:</strong> text a kontext mu dáváš ty. <strong>M365 Copilot:</strong> pomáhá přímo ve Wordu/Excelu/Outlooku/PowerPointu.</p><h2>Word</h2><ul><li>Struktura dokumentu</li><li>Přepis poznámek do čistého textu</li><li>Zkrácení a sjednocení stylu</li></ul><h2>Excel</h2><ul><li>Vzorce a logika tabulek</li><li>Vysvětlení postupu</li><li>Komentář k datům – ne slepé počítání v chatu</li></ul><h2>Outlook</h2><ul><li>Shrnutí vláken</li><li>Draft odpovědi ve správném tónu</li><li>Příprava na schůzku z komunikace</li></ul><h2>PowerPoint</h2><ul><li>Osnova a titulky</li><li>Texty na slidy</li><li>Speaker notes (poznámky řečníka)</li></ul><div class='callout'><strong>Realita:</strong> Nejvíc hodnoty bývá v Outlooku a Wordu. PowerPoint často vyžaduje tvůj zásah kvůli šablonám a brandu.</div>"
+      "section": "Cvičení",
+      "title": "Cvičení: kancelářská rutina",
+      "description": "E-maily, shrnutí, překlady, kontrola textů.",
+      "plain": "cvičení kancelář rutina email shrnutí překlady kontrola",
+      "html": "<h1>Cvičení: kancelářská rutina</h1><p class='kicker'>Vyberte úkol, který skutečně děláte. Projeďte 2 iterace.</p><h2>Jak cvičit</h2><ul><li>Vyberte si reálný úkol.</li><li>Použijte šablonu promptu.</li><li>Projeďte 2 iterace (zkrátit / změnit tón / doplnit checklist).</li></ul><h2>Cvičení 1: Shrnutí vlákna + odpověď</h2><p><strong>Hotovo, když:</strong> máte 6bodové shrnutí + odpověď do 120 slov.</p><pre><code>Níže je e-mailové vlákno.
+1) Shrň ho do 6 bodů.
+2) Vypiš otevřené otázky a rizika.
+3) Navrhni odpověď (max 120 slov).
+4) Přidej checklist ověření.
+
+Text:
+[VLOŽTE]</code></pre><p><strong>Druhá iterace:</strong> uprav odpověď do dvou stylů (velmi stručná / vřelejší).</p><h2>Cvičení 2: Překlad do EN bez „korporátního divadla“</h2><p><strong>Hotovo, když:</strong> angličtina zní jednoduše a přirozeně.</p><pre><code>Přelož do angličtiny.
+Podmínky:
+- jednoduché věty
+- žádné zbytečné fráze
+- zachovej profesionální tón
+- navrhni 2 varianty subjectu
+
+Text:
+[VLOŽTE]</code></pre><h2>Cvičení 3: Kontrola textu – zkrátit o 20 %</h2><p><strong>Hotovo, když:</strong> je to kratší a pořád jasné.</p><pre><code>Zkrať tento text o 20 % bez ztráty významu.
+Zachovej profesionální tón.
+Pak vypiš 5 míst, kde je text nejasný a navrhni opravu.
+
+Text:
+[VLOŽTE]</code></pre><h2>Cvičení 4: „Napiš to tak, aby to šlo poslat“</h2><pre><code>Z těchto bodů udělej e-mail:
+- cílovka: [kdo]
+- účel: [co chceme]
+- tón: profesionální, lidský
+- max 140 slov
+- na konci jasný další krok
+
+Body:
+- ...</code></pre><p><strong>Hotovo, když:</strong> e-mail má kontext (1 věta), 2–4 věcné body, konkrétní CTA.</p>"
     },
     {
-      "slug": "08-bezpecnost-prakticky",
+      "slug": "08-cviceni-realitni",
       "number": "8",
-      "section": "Bezpečnost",
-      "title": "Bezpečnost: nejčastější otázky",
-      "description": "Jak uvažovat zdravě: minimalizace, anonymizace, kontrola.",
-      "plain": "bezpečnost co nedělat minimalizace anonymizace checklist",
-      "html": "<h1>Bezpečnost: nejčastější otázky</h1><p class='kicker'>Stručné odpovědi na typické obavy a nejistoty.</p><h2>„Můžu tam dát smlouvu?“</h2><p>Bezpečný default: anonymizuj a dávej jen část, která je potřeba pro konkrétní úkol (např. vybrané články). Když si nejsi jistý, konzultuj interní pravidla.</p><h2>„Co když si to zapamatuje?“</h2><p>Chovej se, jako bys psal/a chytrému kolegovi: dávej jen to, co je nutné. Nezapomínej na anonymizaci.</p><h2>„Jak se vyhnout průšvihu“ (praktický checklist)</h2><ul><li>Jedu přes firemní účet.</li><li>Nedávám hesla a přístupy.</li><li>Anonymizuji klienty (Klient A).</li><li>Dávám jen minimum nutného textu.</li><li>Před odesláním: kontrola faktů + citlivých údajů.</li></ul>"
+      "section": "Cvičení",
+      "title": "Cvičení: realitní agent / konzultant",
+      "description": "Popisy, shortlist, nabídky, námitky, jednání.",
+      "plain": "realitní agent konzultant popisy shortlist nabídky námitky",
+      "html": "<h1>Cvičení: realitní agent / konzultant</h1><p class='kicker'>Použijte modelovou situaci, nebo si ji nahraďte reálným dealem.</p><h2>Modelová situace</h2><ul><li>Klient: Firma A (mezinárodní služby)</li><li>Potřeba: nové kanceláře v Praze, 1 200–1 600 m², nástup Q3/Q4</li><li>Důraz: MHD, reprezentativní recepce</li><li>Specifika: 2 zasedačky + 1 velký týmový prostor</li><li>Riziko: rozhoduje CFO, HR tlačí na kvalitu prostředí</li></ul><h3>Varianty (zjednodušené)</h3><ul><li>Varianta 1 – P4 u metra: dobrá dostupnost, slabší reprezentativnost, lepší cena</li><li>Varianta 2 – Centrum: top reprezentativnost, vyšší náklady, omezené parkování</li><li>Varianta 3 – P5: vyvážené, dobrý fit-out, dostupnost dobrá, ale ne top</li></ul><h2>Cvičení 1: Krátký klientský e-mail (shortlist)</h2><p><strong>Hotovo, když:</strong> e-mail má max 140 slov a navrhuje další krok.</p><pre><code>Jsi seniorní realitní konzultant.
+Napiš e-mail klientovi (CFO v kopii).
+Cíl: poslat 3 možnosti jako shortlist.
+Tón: profesionální, stručný, bez hype.
+Max 140 slov.
+Na konci navrhni další krok (prohlídky / call).
+
+Podklady:
+[ZKOPÍRUJ MODEL SITUACI]</code></pre><p><strong>Druhá iterace:</strong> varianta pro CFO (náklady/riska) a pro HR (prostředí/employer branding).</p><h2>Cvičení 2: Srovnání nabídek</h2><p><strong>Hotovo, když:</strong> máte tabulku + 10 otázek.</p><pre><code>Porovnej 3 varianty v tabulce:
+- dostupnost
+- reprezentativnost
+- rizika
+- co je potřeba ověřit
+Pak napiš 10 otázek na landlord / property management.
+Na závěr doporuč další krok.
+
+Podklady:
+[ZKOPÍRUJ MODEL SITUACI]</code></pre><h2>Cvičení 3: Námitky klienta</h2><pre><code>Klient říká: "[VLOŽ NÁMITKU]"
+Připrav:
+1) krátkou odpověď
+2) vysvětlující odpověď
+3) strategickou odpověď s otázkou zpět
+Neslibuj nic neověřeného.</code></pre><h2>Cvičení 4: Popis nemovitosti ve 3 výstupech</h2><pre><code>Níže jsou fakta o nemovitosti. Nic si nevymýšlej.
+Vytvoř:
+A) web popis 120–160 slov
+B) e-mail klientovi max 90 slov
+C) teaser (6 odrážek)
+Na konci: co je potřeba doplnit.
+
+Fakta:
+- Lokalita:
+- Plocha:
+- Dostupnost:
+- Fit-out:
+- Specifika:
+- Parkování / MHD:
+- ESG/certifikace (pokud je):
+- Další:</code></pre><h2>Cvičení 5: Příprava na schůzku (agenda + scénáře)</h2><pre><code>Připravuji se na schůzku s klientem ohledně shortlistu kanceláří.
+Cíl: posunout rozhodnutí a získat jasná kritéria.
+Vytvoř:
+- agendu 30 minut
+- must-have vs nice-to-have
+- 10 otázek
+- 3 scénáře vývoje a nejlepší reakce
+
+Kontext:
+[ZKOPÍRUJ MODEL SITUACI]</code></pre>"
     },
     {
-      "slug": "09-hands-on",
+      "slug": "09-cviceni-admin",
       "number": "9",
       "section": "Cvičení",
-      "title": "Hands-on: úkoly pro workshop",
-      "description": "Varianta pro začátečníky i zvídavější účastníky.",
-      "plain": "hands-on úkoly začátečníci zvídavější",
-      "html": "<h1>Hands-on: úkoly pro workshop</h1><p class='kicker'>Vyber si variantu podle chuti. Cíl je odnést si hotové prompty.</p><h2>Varianta A: Úplní začátečníci</h2><ul><li>Shrnutí vlákna + návrh odpovědi</li><li>Z bodů klientský e-mail</li><li>Kontrola a zkrácení textu</li></ul><h3>Prompt: shrnutí vlákna</h3><pre><code>Níže je e-mailové vlákno.\n1) Shrň ho do 6 bodů (co se řeší, co už je dohodnuto).\n2) Vypiš otevřené otázky a rizika (max 6).\n3) Navrhni odpověď klientovi: profesionální, stručná, přátelská. Max 120 slov.\n4) Na konec přidej checklist: co ověřit před odesláním.\n\nText:\n[VLOŽTE]</code></pre><h3>Prompt: e-mail z bodů</h3><pre><code>Z těchto bodů udělej e-mail klientovi.\n- cílovka: [CFO / HR / CEO / office manager]\n- účel: [potvrdit prohlídku / poslat shortlist / vysvětlit další krok]\n- tón: profesionální, lidský, bez vaty\n- délka: max 140 slov\n- jazyk: česky\n- na konci jasný další krok\n\nBody:\n[1]\n[2]\n[3]</code></pre><h3>Prompt: zkrácení</h3><pre><code>Zkontroluj tento text.\nChci:\n1) opravit chyby a zlepšit srozumitelnost\n2) zkrátit o 20 % bez ztráty významu\n3) zachovat profesionální tón\n4) vypsat 5 míst, kde to může být nejasné + navrhnout opravu\n\nText:\n[VLOŽTE]</code></pre><h2>Varianta B: Zvídavější účastníci</h2><ul><li>Srovnání 3 nabídek + otázky na landlord/PM</li><li>Námitky klienta (3 úrovně) + otázka zpět</li><li>Executive summary z poznámek</li></ul><h3>Prompt: srovnání</h3><pre><code>Níže jsou parametry několika nabídek.\nÚkol:\n1) Udělej srovnání v tabulce (parametry + rizika).\n2) Napiš „kdy dává smysl vybrat každou variantu“.\n3) Připrav 10 otázek na landlord/PM pro férové porovnání.\n4) Na závěr: doporučení + na čem závisí.\n\nData:\n[VLOŽTE]</code></pre><h3>Prompt: námitky</h3><pre><code>Jsi obchodní kouč pro komerční real estate.\nKlient říká: \"[VLOŽ NÁMITKU]\"\n\nPřiprav 3 varianty odpovědi:\n1) krátká a věcná (1–2 věty)\n2) vysvětlující (5–6 vět)\n3) strategická – s otázkou zpět\n\nZohledni:\n- cíl: udržet důvěru, ne tlačit\n- neslibuj nic, co není ověřené</code></pre><h3>Prompt: executive summary</h3><pre><code>Z mých poznámek udělej 1stránkové executive summary.\nStruktura:\n1) Kontext (2–3 věty)\n2) Co je cílem (body)\n3) Doporučení (1 odstavec) + na čem závisí\n4) Rizika + co ověřit\n5) Další krok (3 kroky)\n\nPoznámky:\n[VLOŽTE]</code></pre>"
+      "title": "Cvičení: administrativa",
+      "description": "Zápisy, interní komunikace, standardizace dokumentů.",
+      "plain": "administrativa zápisy interní komunikace standardizace",
+      "html": "<h1>Cvičení: administrativa</h1><h2>Cvičení 1: Zápis z meetingu</h2><p><strong>Hotovo, když:</strong> máte tabulku action items.</p><pre><code>Z mých poznámek udělej zápis:
+- Kontext
+- Rozhodnutí
+- Action items (Úkol | Vlastník | Deadline | Poznámka)
+- Otevřené otázky
+- Další krok
+
+Poznámky:
+[VLOŽTE]</code></pre><h2>Cvičení 2: Interní oznámení + FAQ</h2><p><strong>Hotovo, když:</strong> e-mail má max 160 slov a FAQ má 6 položek.</p><pre><code>Napiš interní e-mail kolegům o změně: [popis změny].
+Max 160 slov, srozumitelně.
+Přidej FAQ (6 otázek + odpovědí) a 3 varianty předmětu.</code></pre><h2>Cvičení 3: Standardizace dokumentu</h2><p><strong>Hotovo, když:</strong> máte seznam nekonzistencí + mini slovníček.</p><pre><code>Zkontroluj konzistenci textu:
+- názvosloví (stejná věc různě pojmenovaná)
+- jednotky (m²/sqm, Kč/EUR, měsíčně/ročně)
+- duplicity a nejasnosti
+
+Výstup:
+1) seznam nálezů + doporučená oprava
+2) slovníček 10 preferovaných termínů
+
+Text:
+[VLOŽTE]</code></pre>"
     },
     {
-      "slug": "10-nejcastejsi-chyby",
+      "slug": "10-agenti",
       "number": "10",
-      "section": "Prakticky",
-      "title": "Nejčastější chyby uživatelů Copilota",
-      "description": "Špatné prompty, přehnaná očekávání, AI jako Google, výpočty.",
-      "plain": "chyby prompty očekávání google výpočty copy paste",
-      "html": "<h1>Nejčastější chyby uživatelů Copilota</h1><p class='kicker'>Rychlé opravy, které zlepší výstupy okamžitě.</p><h2>1) Moc obecné zadání</h2><p>Špatně: „Napiš e-mail.“ Lépe: cílovka + účel + délka + tón.</p><h2>2) Přehnaná očekávání</h2><p>Copilot často zkrátí cestu k 80 %. Posledních 20 % je tvoje práce (data, brand, přesnost).</p><h2>3) AI jako Google</h2><p>Copilot není autorita. Používej ho na strukturu a shrnutí, fakta ověřuj.</p><h2>4) Výpočty v chatu</h2><p>Excel počítá. Copilot navrhuje postup a vzorce. Výsledky ověřuj v tabulce.</p><h2>5) Copy-paste bez kontroly</h2><p>Před odesláním vždy kontrola faktů, tónu a citlivých údajů.</p><div class='callout'><strong>Pre-flight:</strong> fakta → tón → další krok → citlivé info.</div>"
+      "section": "Bonus",
+      "title": "Bonus: Agenti",
+      "description": "Kdy dává agent smysl a jak na pseudo-agenta.",
+      "plain": "agenti pseudo-agent kontrola konzistence",
+      "html": "<h1>Bonus: Agenti</h1><p class='kicker'>Užitečné hlavně tam, kde se opakuje stejný typ kontroly.</p><h2>Kdy agent dává smysl</h2><ul><li>Kontrola konzistence dlouhých reportů.</li><li>Kontrola tone of voice v klientských e-mailech.</li><li>Standardní struktura zápisu z meetingu.</li><li>Kontrola terminologie a jednotek.</li></ul><h2>Pseudo-agent i bez agentů</h2><pre><code>Od teď jsi můj Agent pro [název].
+Tvoje trvalá pravidla:
+- [pravidlo 1]
+- [pravidlo 2]
+- [pravidlo 3]
+Vždy zakonči checklistem kontroly.
+Rozumíš? Pokud ano, napiš „Připraven“ a zeptej se na první vstup.</code></pre>"
     },
     {
-      "slug": "11-jak-zacit-zitra",
+      "slug": "11-m365",
       "number": "11",
-      "section": "Prakticky",
-      "title": "Jak začít hned zítra",
-      "description": "Checklist, denní workflow, AI kufřík.",
-      "plain": "začít zítra checklist denní workflow ai kufřík",
-      "html": "<h1>Jak začít hned zítra</h1><p class='kicker'>Nečekej na dokonalost. Začni malou rutinou.</p><h2>Osobní checklist (10 minut)</h2><ul><li>Vyber 2 opakované úkoly, které tě nejvíc zdržují.</li><li>Udělej na ně 2 uložené prompty (šablony).</li><li>Zaveď pravidlo: Copilot = draft, ty = final.</li><li>Každý den 1 malý use case.</li></ul><h2>Doporučený denní workflow</h2><ul><li>Ráno: plán dne (6 bodů) + 1 nejdůležitější krok u každého.</li><li>Před schůzkou: agenda + otázky + rizika.</li><li>Po schůzce: zápis + follow-up do 7 minut.</li><li>E-maily: shrnutí → draft odpovědi → zkrácení → checklist.</li></ul><h2>AI kufřík (starter pack)</h2><ul><li>Shrnutí vlákna + odpověď</li><li>E-mail z bodů</li><li>Zápis z meetingu</li><li>Popis nemovitosti ve 3 verzích</li><li>Srovnání nabídek + otázky</li></ul>"
+      "section": "Bonus",
+      "title": "Lepší svět s Microsoft 365 Copilotem",
+      "description": "Word/Excel/Outlook/PPT bez marketingu, reálně.",
+      "plain": "m365 copilot word excel outlook powerpoint",
+      "html": "<h1>Lepší svět s Microsoft 365 Copilotem</h1><p class='kicker'>Inspirace: kdy upgrade dává smysl – a kdy ne.</p><h2>Hlavní rozdíl</h2><p><strong>Copilot Chat:</strong> vy mu dodáte text/fakta. <strong>M365 Copilot:</strong> pracuje přímo ve Wordu/Excelu/Outlooku/PPT.</p><h2>Word</h2><ul><li>První verze struktury dokumentu</li><li>Přepis poznámek do čistého textu</li><li>Zkrácení a sjednocení stylu</li></ul><pre><code>Z tohoto obsahu udělej 1stránkové executive summary.
+Struktura: Kontext – Klíčové body – Rizika – Doporučení – Další krok.
+Tón: profesionální, věcný.</code></pre><h2>Excel</h2><pre><code>Mám tabulku se sloupci [popis].
+Chci spočítat [cíl].
+Navrhni vzorec (SUMIFS / XLOOKUP) a vysvětli krok za krokem.</code></pre><h2>Outlook</h2><ul><li>Shrnutí vláken</li><li>Návrh odpovědi</li><li>Příprava na schůzku z komunikace</li></ul><h2>PowerPoint</h2><ul><li>Osnova</li><li>Texty na slidy</li><li>Speaker notes</li></ul><div class='callout'><strong>Realita:</strong> Nejvíc hodnoty bývá v Outlooku a Wordu. PowerPoint často vyžaduje tvůj zásah kvůli šablonám.</div>"
     },
     {
       "slug": "12-osobni-inspirace",
       "number": "12",
       "section": "Inspirace",
-      "title": "Osobní inspirace (koníčky, dovolená)",
-      "description": "Recepty, itinerář, jazyky, fitness, osobní administrativa.",
-      "plain": "osobní použití dovolená itinerář recepty angličtina fitness",
-      "html": "<h1>Osobní inspirace (koníčky, dovolená)</h1><p class='kicker'>Motivace často vznikne doma – a pak se přenese do práce. Bez firemních dat.</p><h2>Vaření</h2><pre><code>Mám doma:\n- [seznam 8–12 položek]\nChci:\n- 3 rychlé večeře do 25 minut\n- nákupní seznam chybějících věcí\n- postup krok za krokem</code></pre><h2>Dovolená (itinerář)</h2><pre><code>Naplánuj mi 5denní dovolenou:\n- destinace: [kam]\n- styl: [pohoda / kultura / aktivní / mix]\n- cestujeme: [pár / rodina / kamarádi]\nChci:\n- den po dni (ráno/poledne/večer)\n- 3 varianty pro špatné počasí\n- checklist věcí na cestu</code></pre><h2>Jazyky (10 minut denně)</h2><pre><code>Chci se zlepšit v angličtině pro práci.\nÚroveň: [A2/B1/B2]\nKaždý den:\n- 8 frází pro e-maily/meeting\n- mini dialog\n- 3 otázky na procvičení\nOprav moje odpovědi.</code></pre><h2>Osobní administrativa</h2><pre><code>Napiš mi e-mail:\n- komu: [servis/pronajímatel/úřad]\n- účel: [reklamace/žádost/domluva]\n- tón: slušný, věcný, pevný\n- max 140 slov\nNa konci: co mám přiložit/doplnit.</code></pre>"
+      "title": "Osobní inspirace",
+      "description": "Koníčky, dovolená, jazyky, fitness, osobní admin.",
+      "plain": "osobní inspirace dovolená recepty jazyky fitness",
+      "html": "<h1>Osobní inspirace (koníčky, dovolená, životní admin)</h1><p class='kicker'>Pozor: do osobních nástrojů nikdy nedávejte firemní ani klientská data.</p><h2>Vaření a nákupy</h2><pre><code>Mám doma:
+- [seznam 8–12 položek]
+Chci:
+- 3 rychlé večeře do 25 minut
+- ideálně s vysokým obsahem bílkovin / vegetariánské (vyber)
+- nákupní seznam chybějících věcí
+- postup krok za krokem</code></pre><h2>Plánování dovolené</h2><pre><code>Naplánuj mi 5denní dovolenou:
+- destinace: [kam]
+- rozpočet: [orientačně]
+- styl: [pohoda / kultura / aktivní / mix]
+- cestujeme: [pár / rodina / s kamarády]
+Chci:
+- den po dni itinerář (ráno/poledne/večer)
+- 3 varianty pro špatné počasí
+- checklist věcí na cestu
+- tipy na lokální jídlo</code></pre><h2>Jazyky (10 minut denně)</h2><pre><code>Chci se zlepšit v angličtině pro práci.
+Úroveň: [A2/B1/B2]
+Vytvoř mi 10min denní plán na 14 dní:
+- každý den 8 nových frází (business email / meeting)
+- mini dialog
+- 3 otázky na procvičení
+- opravy mých odpovědí</code></pre><h2>Fitness / běh</h2><pre><code>Vytvoř mi 4týdenní tréninkový plán:
+- cíl: [zlepšit kondici / uběhnout 5 km / posílit záda]
+- čas: 3x týdně 30 minut
+- omezení: [koleno / záda / nic]
+Chci:
+- konkrétní tréninky
+- postupné zvyšování zátěže
+- bezpečnostní upozornění a kdy ubrat</code></pre><h2>Osobní administrativa</h2><pre><code>Napiš mi e-mail:
+- komu: [pronajímatel / servis / škola / úřad]
+- účel: [reklamace / žádost / domluva]
+- tón: slušný, věcný, pevný
+- délka: max 140 slov
+Na konci: co mám přiložit / doplnit.</code></pre><h2>Koníčky</h2><pre><code>Můj koníček je [X].
+Jsem úroveň [začátečník/mírně pokročilý].
+Navrhni mi projekt na 2 hodiny:
+- seznam kroků
+- tipy na časté chyby
+- co si připravit předem</code></pre>"
     },
     {
-      "slug": "13-plan-7-dni",
+      "slug": "13-nejcastejsi-chyby",
       "number": "13",
       "section": "Prakticky",
-      "title": "7denní plán po workshopu",
-      "description": "Jeden malý use case denně.",
-      "plain": "7denní plán návyk email body zkrácení schůzka",
-      "html": "<h1>7denní plán po workshopu</h1><p class='kicker'>Jeden malý krok denně. Nečekej na „až budu umět AI“.</p><h2>Den 1</h2><p>Jedno dlouhé vlákno → shrnutí + odpověď.</p><h2>Den 2</h2><p>5 bodů → klientský e-mail.</p><h2>Den 3</h2><p>Text → zkrátit o 20 %.</p><h2>Den 4</h2><p>Příprava na schůzku → agenda + otázky.</p><h2>Den 5</h2><p>Role-specifické (agent/admin) – jeden úkol.</p><h2>Den 6</h2><p>Osobní použití (dovolená/recept) – pro inspiraci.</p><h2>Den 7</h2><p>Ulož si 3 nejlepší prompty do AI kufříku.</p><div class='callout'><strong>Tip:</strong> Nejlepší návyk je „Copilot = první verze“. Tím se vyhneš perfekcionismu.</div>"
+      "title": "Nejčastější chyby + rychlé opravy",
+      "description": "Krátký seznam nejtypičtějších přešlapů.",
+      "plain": "chyby prompty očekávání google výpočty copy paste",
+      "html": "<h1>Nejčastější chyby + rychlé opravy</h1><h2>1) „Napiš e-mail.“ (moc obecné)</h2><p><strong>Oprava:</strong> přidejte cílovku + účel + délku + tón.</p><h2>2) Nechám Copilota hádat fakta</h2><p><strong>Oprava:</strong> „Nic si nevymýšlej. Kde si nejsi jistý, napiš co ověřit.“</p><h2>3) Copilot jako Google</h2><p><strong>Oprava:</strong> používejte ho jako strukturovač + shrnovač, fakta ověřujte.</p><h2>4) Jedna iterace a konec</h2><p><strong>Oprava:</strong> minimálně 2 kola (draft → zkrátit / zpřesnit / změnit tón).</p><h2>5) Vezmu výstup a pošlu</h2><p><strong>Oprava:</strong> 30s pre-flight checklist (fakta, tón, další krok, citlivé info).</p>"
     },
     {
-      "slug": "14-knihovna-promptu",
+      "slug": "14-ai-kufrik",
       "number": "14",
+      "section": "Prakticky",
+      "title": "AI kufřík: vlastní sada promptů",
+      "description": "30 minut investice, návratnost celý rok.",
+      "plain": "ai kufřík sada promptů šablona",
+      "html": "<h1>AI kufřík: jak si vytvořit vlastní sadu promptů</h1><h2>Princip</h2><p>Vyberte si 5 opakovaných úkolů a ke každému vytvořte: 1 základní prompt, 1 druhou iteraci, 1 checklist kontroly.</p><h2>Šablona (vyplňte)</h2><pre><code>Můj úkol #1: __________________________
+Kdy to dělám: ________________________
+Komu to posílám: ______________________
+Tón: _________________________________
+Rizika/chyby: _________________________
+Můj prompt (verze 1):
+[VLOŽTE]
+
+Můj prompt (verze 2 – zkrácení / jiný tón):
+[VLOŽTE]
+
+Checklist před odesláním:
+- fakta
+- tón
+- další krok
+- citlivé info</code></pre>"
+    },
+    {
+      "slug": "15-plan-7-dni",
+      "number": "15",
+      "section": "Prakticky",
+      "title": "7denní plán: jak začít hned zítra",
+      "description": "Jeden malý use case denně.",
+      "plain": "7denní plán denní rutina",
+      "html": "<h1>7denní plán: jak začít hned zítra</h1><h2>Den 1</h2><p>Shrnutí e-mailu (1×).</p><h2>Den 2</h2><p>Přepis bodů do e-mailu (1×).</p><h2>Den 3</h2><p>Kontrola textu – zkrátit o 20 % (1×).</p><h2>Den 4</h2><p>Příprava na schůzku (agenda + otázky + scénáře).</p><h2>Den 5</h2><p>Role-specifické (agent/admin) – jeden úkol.</p><h2>Den 6</h2><p>Osobní použití (dovolená / recepty / osobní e-mail).</p><h2>Den 7</h2><p>Uložte si 3 nejlepší prompty do AI kufříku.</p>"
+    },
+    {
+      "slug": "16-knihovna-promptu",
+      "number": "16",
       "section": "Knihovna",
-      "title": "Knihovna promptů (šablony)",
+      "title": "Knihovna promptů (kopírovatelné šablony)",
       "description": "Univerzální šablony pro nejčastější situace.",
       "plain": "knihovna promptů šablony 5k sparring checklist tone",
-      "html": "<h1>Knihovna promptů (šablony)</h1><p class='kicker'>Vyber si pár a používej je pořád. Ostatní ber jako inspiraci.</p><h2>Univerzální 5K</h2><pre><code>Jsi [role].\nCílovka: [komu].\nKontext: [stručně].\nÚkol: [co uděláš].\nKritéria: [tón, délka, formát, jazyk].\nKontrola: Nic si nevymýšlej. Kde si nejsi jistý, napiš co ověřit. Polož mi 3 doplňující otázky.</code></pre><h2>Sparring pro vyjednávání</h2><pre><code>Jsi můj sparring partner pro vyjednávání.\nKontext: [deal]. Cíl: [cíl].\nDej mi:\n- 8 argumentů\n- ke každému námitku protistrany\n- moji odpověď (1–2 věty)\n- 5 otázek, které mám položit</code></pre><h2>Kontrola před odesláním</h2><pre><code>Zkontroluj tento e-mail před odesláním:\n- kde může být faktická chyba?\n- kde je to nejasné?\n- kde je to moc tvrdé / moc měkké?\n- je jasný další krok?\nNa konci dej checklist 8 bodů.\n\nText:\n[VLOŽTE]</code></pre>"
+      "html": "<h1>Knihovna promptů (kopírovatelné šablony)</h1><p class='kicker'>Vyber si pár a používej je pořád. Ostatní ber jako inspiraci.</p><h2>Univerzální šablona 5K</h2><pre><code>Jsi [role].
+Cílovka: [komu].
+Kontext: [stručně].
+Úkol: [co uděláš].
+Kritéria: [tón, délka, formát, jazyk].
+Kontrola: Nic si nevymýšlej. Kde si nejsi jistý, napiš co ověřit. Polož mi 3 doplňující otázky.</code></pre><h2>Shrnutí dokumentu „pro klienta“</h2><pre><code>Z tohoto textu udělej klientské shrnutí:
+- max 120 slov
+- srozumitelně
+- bez interních detailů
+- na konci 3 doporučené další kroky
+
+Text:
+[VLOŽTE]</code></pre><h2>Shrnutí „pro management“</h2><pre><code>Udělej 1stránkové shrnutí pro management:
+- 5 bodů
+- 3 dopady
+- 3 doporučení
+- rizika a co ověřit
+
+Text:
+[VLOŽTE]</code></pre><h2>Sparring pro vyjednávání</h2><pre><code>Jsi můj sparring partner pro vyjednávání.
+Kontext: [deal].
+Cíl: [cíl].
+Dej mi:
+- 8 argumentů
+- ke každému námitku protistrany
+- moji odpověď (1–2 věty)
+- 5 otázek, které mám položit</code></pre><h2>Zlepši tón, ale zůstaň pevný</h2><pre><code>Přeformuluj text tak, aby byl:
+- slušný
+- profesionální
+- pevný v požadavku
+- bez agresivity
+Zachovej význam a fakta.
+
+Text:
+[VLOŽTE]</code></pre><h2>Checklist bezpečnosti a kvality</h2><pre><code>Zkontroluj tento e-mail před odesláním:
+- kde může být faktická chyba?
+- kde je to nejasné?
+- kde je to moc tvrdé / moc měkké?
+- je jasný další krok?
+Na konci dej checklist 8 bodů.
+
+Text:
+[VLOŽTE]</code></pre>"
     }
   ]
 }
