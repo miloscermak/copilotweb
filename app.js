@@ -133,6 +133,10 @@ async function init(){
     }catch(e){ console.error("Clipboard error:", e); alert("Nepodařilo se zkopírovat odkaz."); }
   });
   $("printBtn").addEventListener("click", () => window.print());
+  $("menuToggle").addEventListener("click", () => {
+    $("sidebar").classList.toggle("open");
+    $("menuToggle").textContent = $("sidebar").classList.contains("open") ? "Zavřít" : "Menu";
+  });
 
   window.addEventListener("hashchange", onRoute);
   onRoute();
