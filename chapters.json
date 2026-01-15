@@ -14,8 +14,7 @@
     "11-jak-zacit-zitra",
     "12-osobni-inspirace",
     "13-plan-7-dni",
-    "14-knihovna-promptu",
-    "15-deployment-github-pages"
+    "14-knihovna-promptu"
   ],
   "chapters": [
     {
@@ -143,15 +142,6 @@
       "description": "Univerzální šablony pro nejčastější situace.",
       "plain": "knihovna promptů šablony 5k sparring checklist tone",
       "html": "<h1>Knihovna promptů (šablony)</h1><p class='kicker'>Vyber si pár a používej je pořád. Ostatní ber jako inspiraci.</p><h2>Univerzální 5K</h2><pre><code>Jsi [role].\nCílovka: [komu].\nKontext: [stručně].\nÚkol: [co uděláš].\nKritéria: [tón, délka, formát, jazyk].\nKontrola: Nic si nevymýšlej. Kde si nejsi jistý, napiš co ověřit. Polož mi 3 doplňující otázky.</code></pre><h2>Sparring pro vyjednávání</h2><pre><code>Jsi můj sparring partner pro vyjednávání.\nKontext: [deal]. Cíl: [cíl].\nDej mi:\n- 8 argumentů\n- ke každému námitku protistrany\n- moji odpověď (1–2 věty)\n- 5 otázek, které mám položit</code></pre><h2>Kontrola před odesláním</h2><pre><code>Zkontroluj tento e-mail před odesláním:\n- kde může být faktická chyba?\n- kde je to nejasné?\n- kde je to moc tvrdé / moc měkké?\n- je jasný další krok?\nNa konci dej checklist 8 bodů.\n\nText:\n[VLOŽTE]</code></pre>"
-    },
-    {
-      "slug": "15-deployment-github-pages",
-      "number": "15",
-      "section": "Deployment",
-      "title": "Deployment: GitHub Pages",
-      "description": "Kroky od repozitáře až po publikaci. Bez build toolingu.",
-      "plain": "github pages deployment repository actions settings",
-      "html": "<h1>Deployment: GitHub Pages</h1><p class='kicker'>Tahle verze je čistě statická (HTML/CSS/JS/JSON), ideální pro GitHub Pages.</p><h2>Varianta A: GitHub Pages ze složky /root</h2><ul><li>Vytvoř repo (např. copilot-handbook).</li><li>Nahraj soubory: index.html, styles.css, app.js, chapters.json.</li><li>V GitHubu otevři <em>Settings → Pages</em>.</li><li>Source: <strong>Deploy from a branch</strong>.</li><li>Branch: <strong>main</strong>, Folder: <strong>/ (root)</strong>.</li><li>Ulož. GitHub vygeneruje URL (typicky https://USERNAME.github.io/REPO/).</li></ul><h2>Varianta B: GitHub Actions (doporučené pro pořádek)</h2><ul><li>V Settings → Pages vyber Source: <strong>GitHub Actions</strong>.</li><li>Použij jednoduchý workflow, který publikuje statické soubory (bez buildu).</li><li>Výhoda: stabilní proces a možnost budoucích úprav.</li></ul><h2>Co je důležité</h2><ul><li>Stránka používá fetch('chapters.json') → musí běžet přes https (Pages to řeší).</li><li>Odkazy na kapitoly: #/slug (funguje bez server-side routingu).</li><li>Pro interní použití zvaž repo jako private; Pages u private rep vyžaduje placený GitHub plán organizace/účtu (záleží na nastavení).</li></ul><div class='callout'><strong>Tip:</strong> Pokud chceš materiál interně bez veřejného URL, lze to hostovat i na firemním SharePointu / statickém hostingu – princip je stejný.</div>"
     }
   ]
 }
