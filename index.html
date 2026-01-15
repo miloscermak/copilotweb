@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Copilot – Cvičební příručka (C&W)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-title">Copilot • Cvičební příručka</div>
+        <div class="brand-sub">Cushman &amp; Wakefield ČR</div>
+      </div>
+
+      <div class="search">
+        <input id="searchInput" type="search" placeholder="Hledat v kapitolách…" autocomplete="off" />
+      </div>
+
+      <nav id="nav" class="nav" aria-label="Kapitoly"></nav>
+
+      <div class="sidebar-footer">
+        <div class="tiny">Tip: otevři kapitolu, zkopíruj prompt, doplň [ ] a spusť.</div>
+      </div>
+    </aside>
+
+    <main class="content">
+      <header class="topbar">
+        <div class="breadcrumbs" id="breadcrumbs"></div>
+        <div class="actions">
+          <button id="prevBtn" class="btn" title="Předchozí kapitola">←</button>
+          <button id="nextBtn" class="btn" title="Další kapitola">→</button>
+          <button id="copyLinkBtn" class="btn" title="Zkopírovat odkaz na kapitolu">Kopírovat odkaz</button>
+          <button id="printBtn" class="btn" title="Tisk aktuální kapitoly">Tisk kapitoly</button>
+        </div>
+      </header>
+
+      <article id="article" class="article" aria-live="polite"></article>
+
+      <footer class="footer">
+        <div class="tiny">Interní studijní materiál pro workshop. Nepoužívej pro sdílení citlivých dat mimo firemní prostředí.</div>
+      </footer>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
