@@ -21,23 +21,34 @@ function sanitizeHtml(html){
 
 function renderNav(list){
   const nav = $("nav"); nav.innerHTML = "";
-  const grouped = new Map();
+  // Dvouúrovňové seskupení: group → section → kapitoly
+  const groups = new Map();
   for (const ch of list){
-    const sec = ch.section || "Kapitoly";
-    if (!grouped.has(sec)) grouped.set(sec, []);
-    grouped.get(sec).push(ch);
+    const g = ch.group || "Kapitoly";
+    const s = ch.section || "";
+    if (!groups.has(g)) groups.set(g, new Map());
+    const secMap = groups.get(g);
+    if (!secMap.has(s)) secMap.set(s, []);
+    secMap.get(s).push(ch);
   }
-  for (const [sec, items] of grouped){
-    const secEl = document.createElement("div");
-    secEl.className = "section"; secEl.textContent = sec;
-    nav.appendChild(secEl);
-    for (const ch of items){
-      const a = document.createElement("a");
-      a.href = `#/${ch.slug}`;
-      a.dataset.slug = ch.slug;
-      a.innerHTML = `<div><span class="knum">${escapeHtml(ch.number)}</span><span class="ktitle">${escapeHtml(ch.title)}</span></div>
-        ${ch.description ? `<div class="kdesc">${escapeHtml(ch.description)}</div>` : ""}`;
-      nav.appendChild(a);
+  for (const [gName, secMap] of groups){
+    const gEl = document.createElement("div");
+    gEl.className = "group"; gEl.textContent = gName;
+    nav.appendChild(gEl);
+    for (const [sName, items] of secMap){
+      if (sName){
+        const secEl = document.createElement("div");
+        secEl.className = "section"; secEl.textContent = sName;
+        nav.appendChild(secEl);
+      }
+      for (const ch of items){
+        const a = document.createElement("a");
+        a.href = `#/${ch.slug}`;
+        a.dataset.slug = ch.slug;
+        a.innerHTML = `<div><span class="knum">${escapeHtml(ch.number)}</span><span class="ktitle">${escapeHtml(ch.title)}</span></div>
+          ${ch.description ? `<div class="kdesc">${escapeHtml(ch.description)}</div>` : ""}`;
+        nav.appendChild(a);
+      }
     }
   }
   highlight();
@@ -89,9 +100,11 @@ function render(ch){
   const article = $("article");
   if (!ch){
     $("breadcrumbs").textContent = "Domů";
-    article.innerHTML = `<h1>Copilot • Cvičební příručka</h1>
-      <p class="kicker">Vyber kapitolu vlevo. (Na mobilu otevři přes odkaz #/slug.)</p>
-      <div class="callout"><strong>Tip:</strong> Začni kapitolou „Rychlý start: 12 promptů“ a ulož si 3 prompty do AI kufříku.</div>`;
+    article.innerHTML = `<h1>Microsoft 365 Copilot – Příručka pro zaměstnance E.ON</h1>
+      <p class="kicker">Dvě knihy v jedné. Vlevo si vyber, kam jít.</p>
+      <div class="callout"><strong>📖 Referenční příručka</strong> — Rychle zjistíš, co Copilot umí ve Wordu, Excelu, PowerPointu, Outlooku, Teams a jak fungují agenti (Researcher, Analyst). Dobré pro <em>„jak to udělat tam a tam"</em>.</div>
+      <div class="callout"><strong>🎓 Naučit se používat</strong> — Cvičební materiál: jak dobře promptovat (metoda 5K), 12 základních promptů, cvičení, 7denní plán a knihovna šablon. Dobré pro <em>„chci se v tom zlepšit"</em>.</div>
+      <p class="kicker" style="margin-top:24px">Většina zaměstnanců E.ON má dnes základní Copilot Chat. Pokročilé funkce (Researcher, plný M365 Copilot) jsou na vyžádání — u každé kapitoly uvidíš, co ke které funkci potřebuješ.</p>`;
     $("prevBtn").disabled = true;
     $("nextBtn").disabled = true;
     return;
