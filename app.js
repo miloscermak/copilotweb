@@ -100,11 +100,11 @@ function render(ch){
   const article = $("article");
   if (!ch){
     $("breadcrumbs").textContent = "Domů";
-    article.innerHTML = `<h1>Microsoft 365 Copilot – Příručka pro zaměstnance E.ON</h1>
+    article.innerHTML = `<h1>Microsoft 365 Copilot – Příručka pro zaměstnance firmy</h1>
       <p class="kicker">Dvě knihy v jedné. Vlevo si vyber, kam jít.</p>
       <div class="callout"><strong>📖 Referenční příručka</strong> — Rychle zjistíš, co Copilot umí ve Wordu, Excelu, PowerPointu, Outlooku, Teams a jak fungují agenti (Researcher, Analyst). Dobré pro <em>„jak to udělat tam a tam"</em>.</div>
       <div class="callout"><strong>🎓 Naučit se používat</strong> — Cvičební materiál: jak dobře promptovat (metoda 5K), 12 základních promptů, cvičení, 7denní plán a knihovna šablon. Dobré pro <em>„chci se v tom zlepšit"</em>.</div>
-      <p class="kicker" style="margin-top:24px">Většina zaměstnanců E.ON má dnes základní Copilot Chat. Pokročilé funkce (Researcher, plný M365 Copilot) jsou na vyžádání — u každé kapitoly uvidíš, co ke které funkci potřebuješ.</p>`;
+      <p class="kicker" style="margin-top:24px">Většina zaměstnanců firmy má dnes základní Copilot Chat. Pokročilé funkce (Researcher, plný M365 Copilot) jsou na vyžádání — u každé kapitoly uvidíš, co ke které funkci potřebuješ.</p>`;
     $("prevBtn").disabled = true;
     $("nextBtn").disabled = true;
     return;

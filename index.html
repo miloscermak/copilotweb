@@ -3,15 +3,35 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Microsoft 365 Copilot – Příručka pro zaměstnance E.ON</title>
+  <title>Microsoft 365 Copilot – Příručka pro zaměstnance firmy</title>
   <link rel="stylesheet" href="styles.css" />
+  <script>
+    // Jednoduchá heslová brána (není to skutečná bezpečnost, jen zábrana před náhodnými návštěvníky).
+    (function(){
+      // "humpolec" zakódované v base64, ať není heslo přímo v HTML zdrojáku.
+      var EXPECTED = "aHVtcG9sZWM=";
+      if (sessionStorage.getItem("eon_pw_ok") === "1") return;
+      var tries = 0;
+      while (tries < 3){
+        var input = prompt("Zadej heslo pro přístup k příručce:");
+        if (input === null){ document.documentElement.innerHTML = ""; document.write("Přístup odepřen."); return; }
+        if (btoa(input) === EXPECTED){
+          sessionStorage.setItem("eon_pw_ok", "1");
+          return;
+        }
+        tries++;
+      }
+      document.documentElement.innerHTML = "";
+      document.write("Přístup odepřen.");
+    })();
+  </script>
 </head>
 <body>
   <div class="app">
     <aside class="sidebar" id="sidebar">
       <div class="brand">
         <div class="brand-title">Microsoft 365 Copilot</div>
-        <div class="brand-sub">Příručka pro zaměstnance E.ON</div>
+        <div class="brand-sub">Příručka pro zaměstnance firmy</div>
       </div>
 
       <div class="search">
